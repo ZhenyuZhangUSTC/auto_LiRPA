@@ -196,7 +196,7 @@ def cifar_cnn_b(in_ch=3, in_dim=32):
     # cifar_cnn_b
     return nn.Sequential(
         # nn.ZeroPad2d((1,2,1,2)),
-        nn.Conv2d(3, 32, (5,5), stride=2, padding=(1,2,1,2)),
+        nn.Conv2d(3, 32, (5,5), stride=2, padding=(1,2)),
         nn.ReLU(),
         nn.Conv2d(32, 128, (4,4), stride=2, padding=1),
         nn.ReLU(),
