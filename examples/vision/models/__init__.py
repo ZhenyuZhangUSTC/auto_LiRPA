@@ -38,4 +38,5 @@ Models = {
     'wide_resnet_imagenet64_1000class': wide_resnet_imagenet64_1000class,
     'vnncomp_resnet2b': vnncomp_resnet2b,
     'vnncomp_resnet4b': vnncomp_resnet4b,
+    'cifar_cnn_b': cifar_cnn_b,
 }
