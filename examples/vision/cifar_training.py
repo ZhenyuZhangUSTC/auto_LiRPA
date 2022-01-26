@@ -114,11 +114,10 @@ def Train(model, t, loader, eps_scheduler, norm, train, opt, bound_type, method=
         start = time.time()
         eps_scheduler.step_batch()
         eps = eps_scheduler.get_eps()
-        eps = 0.007
         # For small eps just use natural training, no need to compute LiRPA bounds
         batch_method = method
-        # if eps < 1e-50:
-        #     batch_method = "natural"
+        if eps < 1e-50:
+            batch_method = "natural"
         if train:
             opt.zero_grad()
         # bound input for Linf norm used only
@@ -273,7 +272,6 @@ def main(args):
     eps_scheduler = eval(args.scheduler_name)(args.eps, args.scheduler_opts)
     logger.info(str(model_ori))
 
-    epoch = 100 
     # skip epochs
     if epoch > 0:
         epoch_length = int((len(train_data.dataset) + train_data.batch_size - 1) / train_data.batch_size)
