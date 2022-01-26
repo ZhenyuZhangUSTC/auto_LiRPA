@@ -190,3 +190,18 @@ def cnn_6layer(in_ch, in_dim, width=32, linear_size=256):
         nn.Linear(linear_size,10)
     )
     return model
+
+
+def cifar_cnn_b():
+    # cifar_cnn_b
+    return nn.Sequential(
+        nn.ZeroPad2d((1,2,1,2)),
+        nn.Conv2d(3, 32, (5,5), stride=2, padding=0),
+        nn.ReLU(),
+        nn.Conv2d(32, 128, (4,4), stride=2, padding=1),
+        nn.ReLU(),
+        Flatten(),
+        nn.Linear(8192, 250),
+        nn.ReLU(),
+        nn.Linear(250, 10),
+    )
