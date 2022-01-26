@@ -1,1 +1,1 @@
-python cifar_training.py --batch_size 256 --lr_decay_milestones 1400 1700 --model cifar_cnn_b --eps 0.007843137255
+python cifar_training.py --batch_size 256 --lr_decay_milestones 1400 1700 --model cifar_cnn_b --eps 0.007843137255 --load $1
