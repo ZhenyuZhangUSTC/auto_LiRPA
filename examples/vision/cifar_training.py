@@ -289,6 +289,7 @@ def main(args):
             opt.load_state_dict(opt_state)
             logger.info('resume opt_state')
 
+    epoch = 100 
     ## Step 5: start training
     if args.verify:
         eps_scheduler = FixedScheduler(args.eps)
